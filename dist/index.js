@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /*
 Freeman A. Essential TypeScript. From beginner to pro - 2019
-Листинг 1-13. Тестирование модели данных в файле index.ts в папке src - Стр. 10
+Листинг 1-20. Получение элементов коллекции в файле index.ts в папке src - Стр. 15
 */
 const todoItem_1 = require("./todoItem");
 const todoCollection_1 = require("./todoCollection");
@@ -13,6 +13,4 @@ let todos = [
 let collection = new todoCollection_1.TodoCollection("Adam", todos);
 console.clear();
 console.log(`${collection.userName}'s Todo List`);
-let newId = collection.addTodo("Go for run");
-let todoItem = collection.getTodoById(newId);
-console.log(JSON.stringify(todoItem));
+collection.getTodoItems(true).forEach(item => item.printDetails());
