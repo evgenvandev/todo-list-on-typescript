@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /*
 Freeman A. Essential TypeScript. From beginner to pro - 2019
-Листинг 1-20. Получение элементов коллекции в файле index.ts в папке src - Стр. 15
+Листинг 1-23. Тестирование удаления элемента в файле index.ts в папке src - Стр. 17
 */
 const todoItem_1 = require("./todoItem");
 const todoCollection_1 = require("./todoCollection");
@@ -13,4 +13,5 @@ let todos = [
 let collection = new todoCollection_1.TodoCollection("Adam", todos);
 console.clear();
 console.log(`${collection.userName}'s Todo List`);
+collection.removeComplete();
 collection.getTodoItems(true).forEach(item => item.printDetails());

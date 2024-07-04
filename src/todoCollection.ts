@@ -1,6 +1,6 @@
 /*
 Freeman A. Essential TypeScript. From beginner to pro - 2019
-Листинг 1-19. Предоставление доступа к элементам в файле todoCollection.ts в папке src - Стр. 14
+Листинг 1-22. Удаление завершённых задач в файле todoCollection.ts в папке src - Стр. 16
 */
 import { TodoItem } from './todoItem';
 
@@ -33,5 +33,13 @@ export class TodoCollection {
     if (todoItem) {
       todoItem.complete = complete;
     }
+  }
+
+  removeComplete() {
+    this.itemMap.forEach(item => {
+      if (item.complete) {
+        this.itemMap.delete(item.id);
+      }
+    });
   }
 }

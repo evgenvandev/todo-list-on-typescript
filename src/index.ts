@@ -1,6 +1,6 @@
 /*
 Freeman A. Essential TypeScript. From beginner to pro - 2019
-Листинг 1-20. Получение элементов коллекции в файле index.ts в папке src - Стр. 15
+Листинг 1-23. Тестирование удаления элемента в файле index.ts в папке src - Стр. 17
 */
 import { TodoItem } from "./todoItem";
 import { TodoCollection } from "./todoCollection";
@@ -14,4 +14,5 @@ let collection: TodoCollection = new TodoCollection("Adam", todos);
 console.clear();
 console.log(`${collection.userName}'s Todo List`);
 
+collection.removeComplete();
 collection.getTodoItems(true).forEach(item => item.printDetails());
