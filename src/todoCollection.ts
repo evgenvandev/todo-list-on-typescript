@@ -1,8 +1,13 @@
 /*
 Freeman A. Essential TypeScript. From beginner to pro - 2019
-Листинг 1-22. Удаление завершённых задач в файле todoCollection.ts в папке src - Стр. 16
+Листинг 1-25. Использование типа формы в файле todoCollection.ts в папке src - Стр. 18
 */
 import { TodoItem } from './todoItem';
+
+type ItemCounts = {
+  total: number,
+  incomplete: number
+}
 
 export class TodoCollection {
   private nextId: number = 1;
@@ -41,5 +46,12 @@ export class TodoCollection {
         this.itemMap.delete(item.id);
       }
     });
+  }
+
+  getItemCounts(): ItemCounts {
+    return {
+      total: this.itemMap.size,
+      incomplete: this.getTodoItems(false).length
+    }
   }
 }
